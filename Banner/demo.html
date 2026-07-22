@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html lang="en">
+<head>
+    <title>Nivo Slider Demo</title>
+    <link rel="stylesheet" href="../nivo-slider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+    
+     <script type="text/javascript" src="scripts/jquery-1.4.3.min.js"></script>
+   
+ 	 <script type="text/javascript"  src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+   <script type="text/javascript" src="../jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
+    <script>
+	$(document).ready(function(){
+		$(".search").click(function(){
+		
+		$(".searchcont").show();
+		$(".reviewcont").hide();
+		 $(".search").addClass("button1");
+		 $(".review").addClass("button2");
+		 $(".search").removeClass("button2");
+		 $(".review").removeClass("button1");
+		/*$(".search").css({"text-color":"red","border":"5px solid red","border-bottom":"none"});
+		$(".review").css({"color":"grey","border-bottom":"5px solid red","background-color":"silver"});*/
+		
+			});
+	$(".review").click(function(){
+		$(".searchcont").hide();
+		$(".reviewcont").show();
+		$(".review").addClass("button1");
+		$(".search").addClass("button2");
+		$(".review").removeClass("button2");
+		 $(".search").removeClass("button1");
+		  
+		/*$(".review").css({"text-color":"red","border":"5px solid red","border-bottom":"none"});
+		$(".search").css({"color":"grey","border-bottom":"5px solid red","background-color":"silver"});*/
+		
+
+	});
+			 
+
+		
+   		$(".search").addClass("button1");
+		$(".review").addClass("button2");
+
+
+
+  /*  $(".datepicker").datepicker({
+            changeMonth: true,
+            changeYear: true,
+    })
+    .hide()
+    .click(function() {
+      $(this).hide();
+    });
+
+    $(".datepickerImage").click(function() {
+       $(".datepicker").show(); 
+    });*/
+});
+</script>
+<script type="text/javascript">
+    $(function() {
+        $("#datepicker").datepicker({
+            showOn: "button",
+            buttonImage: "images/calendar-button[2].gif",
+            buttonImageOnly: true,
+            dateFormat: 'yy-mm-dd',
+            onSelect: function(dateText, inst) {
+                document.getElementById('startDate').value = dateText
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function() {
+        $("#datepicker2").datepicker({
+            showOn: "button",
+            buttonImage: "images/calendar-button[2].gif",
+            buttonImageOnly: true,
+            dateFormat: 'yy-mm-dd',
+            onSelect: function(dateText, inst) {
+                document.getElementById('endDate').value = dateText
+            }
+        });
+    });
+</script>
+
+
+</head>
+<body>
+    <div id="wrapper">
+      <div id="slider-wrapper">
+        
+            <div id="slider" class="nivoSlider">
+                <img src="images/toystory.jpg" alt="" />
+                <a href="http://dev7studios.com"><img src="images/up.jpg" /></a>
+                <img src="images/walle.jpg" />
+                <img src="images/nemo.jpg" />
+            </div>
+            <div id="htmlcaption" class="nivo-html-caption">
+                
+            </div>
+        
+      </div>
+
+</div>
+
+<!------------------------>
+        <div class="tab_container">
+    	<ul>
+        	<div class="search"><a href="#"><li>Search</li></a></div>
+            <div class="review"><a href="#"><li>Review Reservation</li></a></div>
+        </ul>
+        <div class="searchcont">
+        <div class="search_container">
+        	<input type="textbox" id="txtbx" placeholder="City,Hotel, Address"/>
+        </div>
+        
+          <div class="check">
+        	<span>Check In</span><span>Check Out</span>
+            <input type="text" class="txtbx1" placeholder="yy/mm/dd" id="datepicker"/>
+            
+			<input type="textbox" class="txtbx2" placeholder="yy/mm/dd" id="datepicker2"/>
+           
+           </div>
+           
+                <div class="Room">
+        	<span>No dates.just shopping</span>
+           <select id="room">
+              <option value="Rooms">Rooms</option>
+ 			 <option value="Delux">Delux</option>
+ 			 <option value="AC">AC</option>
+ 			 <option value="Non-Ac">Non-Ac</option>
+			</select>
+            <a href=""><lable>Need more <br>than 9 rooms?</lable></a>
+           </div>
+           
+           <div class="options">
+           		<select id="numbers">
+              <option value="1">1</option>
+ 			 <option value="2">2</option>
+ 			 <option value="3">3</option>
+ 			 <option value="4">4</option>
+			</select>
+            <select id="numbers1">
+              <option value="0">0</option>
+ 			 <option value="1">1</option>
+ 			 <option value="2">2</option>
+ 			 <option value="3">3</option>
+			</select>
+            <select id="numbers2">
+              <option value="0">0</option>
+ 			 <option value="1">1</option>
+ 			 <option value="2">2</option>
+ 			 <option value="3">3</option>
+			</select>
+           		
+           
+      </div>
+      <div class="rameed">
+      <input type="checkbox" name="Rameed" value="rameed1"> Redeem Wyndham Rewards <br>
+      <input type="button" class="gobutton" name="go" value="GO"/>	
+      </div>
+         
+    </div>
+    <div class="reviewcont">
+    <div class="reservation_container"><span>Review, change, or cancel reservations made online or by phone. If you need additional assistance, please call 1-800-854-9517 (1-888-709-4046 from Mexico). </span>
+    	<div class="namebox">
+        	<span>First Name</span><br>
+            <input type="textbox" id="txtbx"/>
+            <span>Last Name</span><br>
+            <input type="textbox" id="txtbx"/>
+            <span>Confirmation Number</span><br>
+            <input type="textbox" id="txtbx"/>
+            <input type="button" class="findbutton" name="go" value="Find It"/>
+        </div>
+         </div>
+    </div>
+   
+    </div>
+   
+	
+</body>
+</html>

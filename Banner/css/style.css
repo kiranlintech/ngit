@@ -1,0 +1,195 @@
+/*=================================*/
+/* Nivo Slider Demo
+/* November 2010
+/* By: Gilbert Pellegrom
+/* http://dev7studios.com
+/*=================================*/
+
+/*====================*/
+/*=== Reset Styles ===*/
+/*====================*/
+
+
+/*===================*/
+/*=== Main Styles ===*/
+/*===================*/
+
+#slider-wrapper {
+    background:url(../images/slider.png) no-repeat;
+    width:1006px;
+    height:290px;
+    margin:0 auto;
+    padding-top:74px;
+    margin-top:50px;
+	
+}
+
+#slider {
+	position:relative;
+	width:1006px;
+	height:290px;
+	margin-left:0px;
+	background:url(../images/loading.gif) no-repeat 50% 50%;
+}
+#slider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+#slider a {
+	border:0;
+	display:block;
+}
+
+.nivo-controlNav {
+	position:absolute;
+	left:20px;
+	bottom:20px;
+}
+.nivo-controlNav a {
+	display:block;
+	width:22px;
+	height:22px;
+	background:url(../images/bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
+}
+.nivo-controlNav a.active {
+	background-position:0 -22px;
+}
+
+.nivo-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background:url(../images/arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+}
+a.nivo-nextNav {
+	background-position:-30px 0;
+	right:15px;
+}
+a.nivo-prevNav {
+	left:15px;
+}
+
+.nivo-caption {
+    text-shadow:none;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.nivo-caption a { 
+    color:#efe9d1;
+    text-decoration:underline;
+}
+
+/*====================*/
+/*=== Other Styles ===*/
+/*====================*/
+.clear {
+	clear:both;
+}
+
+.tab_container {
+  
+    
+    border-radius: 10px 10px 10px 10px;
+    
+    border-width: 5px 5px medium;
+    float: left;
+    height: 350px;
+    margin: -250px 0 50px 460px;
+    background:white;
+    width: 230px;
+	position:absolute;
+	z-index:99}
+	
+.tab_container li{font-size:11px;font-family:Arial, Helvetica, sans-serif;margin-left:20px;margin-top:10px;}
+#txtbx{border: 1px none grey;
+    box-shadow: 0 2px 4px 2px #E7E7EF inset;
+    margin: 15px 0 0 25px;
+}
+
+
+.check span {
+    float: left;
+    font-family: arial;
+    font-size: 11px;
+    margin: 10px 0 0;
+    padding: 0 0 0 34px;}
+	
+.txtbx1{ border: 1px none grey;
+    box-shadow: 0 2px 4px 2px #E7E7EF inset;
+    margin: 10px 0 0 25px; width: 70px;
+ }
+.txtbx2{ border: 1px none grey;
+    box-shadow: 0 2px 4px 2px #E7E7EF inset;
+    margin: 10px 0 0 5px; width: 70px;
+ }
+ 
+ .datepicker{margin-top:10px;float:left;}
+ 
+ .Room span{    float: left;
+    font-family: arial;
+    font-size: 11px;
+    margin: 10px 0 0  27px;}
+	#room{float: left;
+    font-size: 13px;
+    height: 22px;
+    margin: 11px 0 0 26px;
+    width: 67px;}
+	.Room lable{    color: #990000;
+    float: left;
+    font-size: 10px;
+    margin: 12px 0 0 7px;
+    text-decoration: underline;}
+
+#numbers{  float: left;
+    margin: 61px 2px 0 -142px;
+    width: 30px;}
+#numbers1{  
+    float: left;
+    margin: 61px 2px 0 -86px;
+    width: 30px;
+    }
+#numbers2{  float: left;
+    margin: 61px 2px 0 -29px;
+    width: 30px;}
+	.rameed{   float: left;
+    font-family: arial;
+    font-size: 10px;
+    margin: 22px 0 0 26px;}
+	.review{float:left;margin: -20px 2px 1px 64px;}
+
+
+.searchcont{width: 220px;height: 300px;  float: left;    background:white;border-left:5px solid red;border-right:5px solid red;}
+.reviewcont{width: 220px;height: 300px;  float: left;    background:white;font-family: arial;
+    font-size: 10px;display:none;border-left:5px solid red;border-right:5px solid red;}
+
+.reservation_container span{float:left;padding: 10px 0 0 18px;margin-top: 15px;}
+
+.namebox span{ float: left;
+    margin: 5px 0 0 8px;}
+	
+
+.search{float: left;
+    width: 68px;    border-radius: 10px 10px 0 0;}
+.review{ float: left;
+    margin: 0;
+     width: 152px;border-radius: 10px 10px 0 0;
+}
+.button1{border:5px solid red;border-bottom:none;height: 25px;}
+.nir{color:red;}
+.button2{color:dark grey;border-bottom:5px solid red;background-color:silver;height: 25px;}
+
+.search_container{margin:15px 0px 0px 0px;}
+ul,li{list-style:none;}
+
+.nivoSlider{position:relative;}
+.gobutton{background-color:red;cursor:pointer;color:#fff;line-height:16px;float:left;margin:10px 10px 10px 0px;width:50px;}
+.gobutton:hover{background-color:silver;color:red;}
+.findbutton{background-color:red;cursor:pointer;color:#fff;line-height:16px;float:right;margin:10px 45px 10px 0px;width:80px;}
+.findbutton:hover{background-color:silver;color:red;}
