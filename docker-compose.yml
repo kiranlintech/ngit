@@ -1,0 +1,7 @@
+services:
+  website:
+    build: .
+    container_name: ngit-website
+    restart: unless-stopped
+    ports:
+      - "8085:80"
