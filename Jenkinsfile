@@ -19,7 +19,7 @@ pipeline {
 
         // Jenkins credentials IDs
         DOCKER_CREDS   = 'dockerhub-credentials'
-        VPS_SSH        = 'vps-ssh'
+        VPS_SSH        = 'vps-ssh-key'
         MYLAB_SSH      = 'mylab-ssh'
     }
 
