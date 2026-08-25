@@ -11,7 +11,13 @@ pipeline {
         disableConcurrentBuilds()
         timeout(time: 30, unit: 'MINUTES')
     }
-
+    parameters {
+        choice(
+            name: 'DEPLOY_TARGET',
+            choices: ['HOMELAB', 'VPS'],
+            description: 'Select deployment target'
+        )
+    }
     environment {
         APP_NAME       = 'ngit'
         IMAGE_NAME     = 'kiranlintech/ngit'
