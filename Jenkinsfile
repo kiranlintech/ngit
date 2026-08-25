@@ -69,19 +69,10 @@ pipeline {
                         echo "$DOCKER_PASSWORD" | docker login \
                             -u "$DOCKER_USERNAME" \
                             --password-stdin
+                            docker push ${IMAGE_NAME}:${IMAGE_TAG}
+                            docker push ${IMAGE_NAME}:latest
                     '''
                 }
-            }
-        }
-
-        stage('Push Docker Image') {
-            steps {
-                sh '''
-                    set -e
-
-                    docker push ${IMAGE_NAME}:${IMAGE_TAG}
-                    docker push ${IMAGE_NAME}:latest
-                '''
             }
         }
 
