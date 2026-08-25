@@ -77,34 +77,32 @@ pipeline {
         }
 
         stage('Deploy to host server') {
-        steps {
-            script {
+            steps {
+                script {
+                    def target = params.DEPLOY_TARGET == "HOMELAB" ?
+                                 "ubuntu@${HOMELAB_HOST}" :
+                                 "ubuntu@${VPS_HOST}"
 
-                def target = params.DEPLOY_TARGET == "HOMELAB" ?
-                             "ubuntu@${HOMELAB_HOST}" :
-                             "ubuntu@${VPS_HOST}"
+                    sh """
+                    ssh -o StrictHostKeyChecking=no ${target} '
 
-                sh """
-                ssh -o StrictHostKeyChecking=no ${target} '
+                        docker pull ${IMAGE_NAME}:latest
 
-                    docker pull ${IMAGE_NAME}:latest
+                        docker stop rudram || true
+                        docker rm rudram || true
 
-                    docker stop rudram || true
-                    docker rm rudram || true
+                        docker image prune -f
 
-                    docker image prune -f
-
-                    docker run -d \
-                      --name rudram \
-                      --restart unless-stopped \
-                      -p 8082:8080 \
-                      ${IMAGE_NAME}:latest
-                '
-                """
+                        docker run -d \
+                          --name rudram \
+                          --restart unless-stopped \
+                          -p 8082:8080 \
+                          ${IMAGE_NAME}:latest
+                    '
+                    """
+                }
             }
         }
-    }
-}
 
         stage('Verify Deployment') {
             steps {
