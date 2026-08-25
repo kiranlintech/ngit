@@ -21,6 +21,8 @@ pipeline {
         DOCKER_CREDS   = 'dockerhub-credentials'
         VPS_SSH        = 'vps-ssh-key'
         MYLAB_SSH      = 'mylab-ssh'
+        HOMELAB_HOST = '192.168.5.9'
+        VPS_HOST     = '213.210.37.106'
     }
 
     stages {
@@ -86,7 +88,7 @@ pipeline {
 
                         echo "Deploying ${APP_NAME} to VPS..."
 
-                        ssh -o StrictHostKeyChecking=no ubuntu@YOUR_VPS_IP << EOF
+                        ssh -o StrictHostKeyChecking=no ubuntu@VPS_HOST << EOF
 
                             set -e
 
@@ -122,7 +124,7 @@ pipeline {
 
                         echo "Deploying ${APP_NAME} to mylab..."
 
-                        ssh -o StrictHostKeyChecking=no ubuntu@YOUR_MYLAB_IP << EOF
+                        ssh -o StrictHostKeyChecking=no ubuntu@HOMELAB_HOST << EOF
 
                             set -e
 
